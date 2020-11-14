@@ -1,0 +1,13 @@
+{
+  "verbose": false,
+  "ignore": ["node_modules", "src/translations"],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT":"3999"
+  },
+  "execMap": {
+    "js": "npm run compile:scss && node"
+  },
+  "ext": ".js,.md,.graphql,.html,.scss",
+  "watch": "./src/"
+}
