@@ -1,7 +1,28 @@
-@use "@fwrlines/stylebook/src/main" as stylebook;
+//@use "@fwrlines/stylebook/src/main" as stylebook;
 @use "@fwrlines/swatch/src/main" as swatch;
+
+//* { outline: solid .25rem hsla(210, 30, 30, .5); }
+
 
 .hey {
   background: red;
+  break-after: page;
   font-size: 4em;
+  //height: 100%;
+  //width: 100%;
+}
+
+h2 {
+  break-before: page;
+}
+
+@media print {
+  body {
+    background: grey;
+    //height: 29.7cm;*/
+    padding: 20mm 20mm 15mm;
+    //width: 21cm;
+
+    /* change the margins as you want them to be. */
+  }
 }
