@@ -15,7 +15,9 @@
     "test-stylelint": "stylelint src/main.scss",
     "test-purgecss": "npm run compile:scss && purgecss --css src/main.css --content src/index.html",
     "version:alpha": "npm version prerelease --preid=alpha",
-    "version:beta": "npm version prerelease --preid=beta"
+    "version:beta": "npm version prerelease --preid=beta",
+    "makepd:prod":"wkhtmltopdf -T 0 -B 0 -L 0 -R 0 dist/index.html dist/resume.pdf",
+    "makepdf:dev":"wkhtmltopdf -T 0 -B 0 -L 0 -R 0 src/index.html src/index.pdf"
   },
   "author": "Adrian V",
   "license": "MIT",
