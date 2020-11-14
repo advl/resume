@@ -1,7 +1,6 @@
 
 module.exports = {
   plugins: {
-    'postcss-reporter':{},
     'css-mqpacker':{},
     'postcss-preset-env':
 		{
@@ -18,7 +17,6 @@ module.exports = {
     },
     '@fullhuman/postcss-purgecss':{
       content: ['./dist/**/*.html'],
-      rejected:true
     },
   }
 }
