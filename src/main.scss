@@ -1,4 +1,5 @@
-@use "@fwrlines/swatch/src/main";
+@use "@fwrlines/stylebook/src/main" as stylebook;
+@use "@fwrlines/swatch/src/main" as swatch;
 
 .hey {
   background: red;
