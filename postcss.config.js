@@ -1,5 +1,7 @@
+
 module.exports = {
   plugins: {
+    'postcss-reporter':{},
     'css-mqpacker':{},
     'postcss-preset-env':
 		{
@@ -8,7 +10,16 @@ module.exports = {
 		    'custom-properties': false
 		  }
 		},
-    'cssnano': {}
+    'cssnano': {
+      discardComments:{ 
+        removeAll: true,
+        //removeAllButFirst:false
+      }
+    },
+    '@fullhuman/postcss-purgecss':{
+      content: ['./dist/**/*.html'],
+      rejected:true
+    },
   }
 }
 
