@@ -1,4 +1,5 @@
-#!/usr/bin/node
+#!/bin/sh
+':' //; exec "$(command -v nodejs || command -v node)" "$0" "$@"
 let fs = require('fs')
 let filesize = require('filesize')
 let targetFilename = process.argv[2]
