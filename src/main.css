@@ -979,20 +979,73 @@
   fill: var(--on-y);
 }
 
-.hey {
-  background: red;
-  break-after: page;
-  font-size: 4em;
+body {
+  counter-reset: page;
+  counter-set: pages 2;
 }
 
-h2 {
-  break-before: page;
+.page-header,
+.page-header-space {
+  height: 100px;
 }
 
+.page-footer,
+.page-footer-space {
+  height: 50px;
+}
+
+.page-footer {
+  background: yellow;
+  /* for demo */
+  border-top: 1px solid black;
+  /* for demo */
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.page-footer::after {
+  content: counter(page) "of" counter(pages);
+}
+
+tfoot {
+  counter-increment: page;
+}
+
+.page-header {
+  background: yellow;
+  /* for demo */
+  border-bottom: 1px solid black;
+  /* for demo */
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.page {
+  counter-increment: page;
+  page-break-after: always;
+}
+
+@page {
+  background: white;
+  counter-increment: page;
+  margin: 0;
+  size: a4;
+}
 @media print {
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  button {
+    display: none;
+  }
+
   body {
-    background: grey;
-    padding: 20mm 20mm 15mm;
-    /* change the margins as you want them to be. */
+    margin: 0;
   }
 }
