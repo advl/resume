@@ -1,3 +1,1810 @@
+@charset "UTF-8";
+/**
+ * ===== MODULE ANIMATION =====
+ *
+ * Classes generated
+ * -----------------
+ *
+ * sm-h md-h lg-h h
+ * pointer
+ *
+ * Default Exports
+ * --------------
+ *
+ * - main
+ *
+ */
+/**
+ * ===== MODULE BASE =====
+ *
+ * Colors consumed
+ * --------------
+ *
+ * --heading
+ * --paragraph
+ * --light-link, --link
+ *
+ * Tags styled
+ * -----------
+ *
+ * h1 ... h6
+ * a
+ * pre
+ * ul, ol
+ * blockquote
+ *
+ * Classes generated
+ * -----------------
+ *
+ * .h1 ... .h6
+ * .h1.small ... .h6.small
+ *
+ *
+ * Default Exports
+ * --------------
+ *
+ * - main
+ *
+ */
+/* --- Text Line, Margin --- */
+/* --- Text Display --- */
+/* --- Link --- */
+/* --- Lists --- */
+/* --- Widows --- */
+/* --- Blockquote --- */
+/**
+ * ===== MODULE SIZES.BORDER-RADIUS =====
+ *
+ *
+ * Variables generated
+ * -------------------
+ *
+ * r, rl, rt, rr, rb
+ *
+ *
+ * Default Exports
+ * --------------
+ *
+ * - define-root-variables
+ *
+ */
+/**
+ * ===== MODULE DISPLAY =====
+ *
+ * Classes generated
+ * -----------------
+ *
+ * yb
+ * yi
+ * yib
+ * yf
+ * yif
+ *
+ * Default Exports
+ * --------------
+ *
+ * - main
+ *
+ */
+/**
+ * ===== MODULE SIZES.EM =====
+ *
+ * Variables generated
+ * -------------------
+ *
+ * s-3, s-2, s-2 .... s6
+ * emsize, emsize-sm
+ *
+ *
+ * Classes generated
+ * -----------------
+ *
+ * .s-3, .s-2  ... .s6
+ * .sm-s-3, .sm-s-2 ... sm-s6
+ *
+ * Default Exports
+ * --------------
+ *
+ * - define-root-variables
+ * - main
+ *
+ */
+/**
+ * ===== MODULE FONTS =====
+ *
+ * Variables generated
+ * -------------------
+ *
+ * font-heading, font-paragraph
+ * font-default (maps to one of the previous)
+ * font-icon
+ *
+ * Classes generated
+ * -----------------
+ * fh
+ * fp
+ * fi
+ * fi-icons [data-icon]
+ *
+ * Default Exports
+ * --------------
+ *
+ * - external-imports
+ * - define-root-variables
+ * - main
+ *
+ */
+/**
+ * ===== MODULE HELPERS =====
+ *
+ * Classes generated
+ * -----------------
+ *
+ * sm-h md-h lg-h h
+ * pointer
+ *
+ * Default Exports
+ * --------------
+ *
+ * - main
+ *
+ */
+/*
+@mixin fit {
+  img.fit {
+    object-fit: cover;
+  }
+} */
+/**
+ * ===== MODULE SIZES.MARGIN-PADDING =====
+ *
+ * Classes generated
+ * -----------------
+ *
+ * Setters : u0, u12, u25, u50, u1, u2 ... u10
+ *           v0, v12, v25, v50, v1, v2 ... v10
+ *           sm-u0, sm-u12, ... sm-u10
+ *           sm-v0, sm-v12, ... sm-v10
+ *
+ * Getters : mt-u, mb-u, mr-u, ml-u, mv-u, mh-u
+ *           mt-v, mb-v, mr-v, ml-v, mv-v, mh-v
+ *           pt-v, pb-v, pr-v, pl-v, pv-v, ph-v
+ *           pt-v, pb-v, pr-v, pl-v, pv-v, ph-v
+ *
+ * Default Exports
+ * --------------
+ *
+ * - main
+ *
+ *
+ */
+/**
+ * ===== MODULE TEXT =====
+ *
+ * Classes generated
+ * -----------------
+ *
+ * nt : no style
+ * tl : lighter
+ * tb : bold
+ * ti : italic
+ * tn : underline
+ * tos : oldstyle number
+ * tu : uppercase
+ * tw : lowercase
+ * ts : text with stroke, gets X
+ * tsm : small caps (only on otf files featuring it)
+ * to : most open type features for content (ligatures))
+ *
+ * uc : center
+ * ul : left
+ * ur : right
+ * uj : justified
+ * uc-xs : center for xs or less,
+ * ul-md : center for md or less,
+ *
+ * Default Exports
+ * --------------
+ *
+ * - main
+ *
+ */
+@font-face {
+  font-display: fallback;
+  font-family: "paragraph";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/paragraph.woff2") format("woff2"), url("/paragraph.woff") format("woff");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+@font-face {
+  font-display: fallback;
+  font-family: "paragraph";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/paragraph.bold.woff2") format("woff2"), url("/paragraph.bold.woff") format("woff");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+@font-face {
+  font-display: fallback;
+  font-family: "headings";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/headings.woff2") format("woff2"), url("/headings.woff") format("woff");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+@font-face {
+  font-display: fallback;
+  font-family: "headings";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/headings.bold.woff2") format("woff2"), url("/headings.bold.woff") format("woff");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+/*******************************
+             Reset
+*******************************/
+/* Border-Box */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+// iPad Input Shadows
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="password"],
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  //mobile firefox too!
+}
+*/
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+ ========================================================================== */
+/**
+* 1. Correct the line height in all browsers.
+* 2. Prevent adjustments of font size after orientation changes in
+*    IE on Windows Phone and in iOS.
+*/
+html {
+  line-height: 1.07;
+  /* 1 */
+  text-size-adjust: 100%;
+  /* 2 */
+  text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+ ========================================================================== */
+/**
+* Remove the margin in all browsers (opinionated).
+*/
+body {
+  margin: 0;
+}
+
+/**
+* Add the correct display in IE 9-.
+*/
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+* Correct the font size and margin on `h1` elements within `section` and
+* `article` contexts in Chrome, Firefox, and Safari.
+*/
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ ========================================================================== */
+/**
+* Add the correct display in IE 9-.
+* 1. Add the correct display in IE.
+*/
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+* Add the correct margin in IE 8.
+*/
+figure {
+  margin: 0;
+}
+
+/**
+* 1. Add the correct box sizing in Firefox.
+* 2. Show the overflow in Edge and IE.
+*/
+hr {
+  box-sizing: content-box;
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+ ========================================================================== */
+/**
+* 1. Remove the gray background on active links in IE 10.
+* 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+*/
+a {
+  background-color: transparent;
+  /* 1 */
+  text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+* 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+* 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+*/
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+* Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+*/
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+* Add the correct font weight in Chrome, Edge, and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+* Add the correct font style in Android 4.3-.
+*/
+dfn {
+  font-style: italic;
+}
+
+/**
+* Add the correct background and color in IE 9-.
+*/
+mark {
+  background-color: #FFFF00;
+  color: #000000;
+}
+
+/**
+* Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+* Prevent `sub` and `sup` elements from affecting the line height in
+* all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+ ========================================================================== */
+/**
+* Add the correct display in IE 9-.
+*/
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+* Add the correct display in iOS 4-7.
+*/
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+* Remove the border on images inside links in IE 10-.
+*/
+img {
+  border-style: none;
+}
+
+/**
+* Hide the overflow in IE.
+*/
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+ ========================================================================== */
+/**
+* 1. Change the font styles in all browsers (opinionated).
+* 2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+* Show the overflow in IE.
+* 1. Show the overflow in Edge.
+*/
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+* Remove the inheritance of text transform in Edge, Firefox, and IE.
+* 1. Remove the inheritance of text transform in Firefox.
+*/
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+* 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+*    controls in Android 4.
+* 2. Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  appearance: button;
+  /* 2 */
+}
+
+/**
+* Remove the inner border and padding in Firefox.
+*/
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+* Restore the focus styles unset by the previous rule.
+*/
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+* Correct the padding in Firefox.
+*/
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+* 1. Correct the text wrapping in Edge and IE.
+* 2. Correct the color inheritance from `fieldset` elements in IE.
+* 3. Remove the padding so developers are not caught out when they zero out
+*    `fieldset` elements in all browsers.
+* 4. Try to make it appear completely in the fieldset
+*/
+legend {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 4 */
+  float: left;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+}
+legend + * {
+  clear: both;
+}
+
+/**
+* 1. Add the correct display in IE 9-.
+* 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+*/
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+* Remove the default vertical scrollbar in IE.
+*/
+textarea {
+  overflow: auto;
+}
+
+/**
+* 1. Add the correct box sizing in IE 10-.
+* 2. Remove the padding in IE 10-.
+*/
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+* Correct the cursor style of increment and decrement buttons in Chrome.
+*/
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+* 1. Correct the odd appearance in Chrome and Safari.
+* 2. Correct the outline style in Safari.
+*/
+[type=search] {
+  appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+* Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+*/
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  appearance: none;
+}
+
+/**
+* 1. Correct the inability to style clickable types in iOS and Safari.
+* 2. Change font properties to `inherit` in Safari.
+*/
+::-webkit-file-upload-button {
+  appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+ ========================================================================== */
+/*
+* Add the correct display in IE 9-.
+* 1. Add the correct display in Edge, IE, and Firefox.
+*/
+details,
+menu {
+  display: block;
+}
+
+/*
+* Add the correct display in all browsers.
+*/
+summary {
+  display: list-item;
+}
+
+/* Scripting
+ ========================================================================== */
+/**
+* Add the correct display in IE 9-.
+*/
+canvas {
+  display: inline-block;
+}
+
+/**
+* Add the correct display in IE.
+*/
+template {
+  display: none;
+}
+
+/* Hidden
+ ========================================================================== */
+/**
+* Add the correct display in IE 10-.
+*/
+[hidden] {
+  display: none;
+}
+
+:root {
+  --font-heading: headings, helvetica neue, Helvetica, Verdana, Arial, sans-serif;
+  --font-paragraph: paragraph, HK Grotesk Pro, Garamond, Baskerville, Times, Times New Roman, serif;
+  --font-default: var(--font-paragraph);
+  --font-icon: icons;
+  --emsize: 18px;
+  --emsize-sm: 16px;
+  --s-3: 0.5787037037;
+  --s-2: 0.6944444444;
+  --s-1: 0.8333333333;
+  --s0: 1;
+  --s1: 1.2;
+  --s2: 1.44;
+  --s3: 1.728;
+  --s4: 2.0736;
+  --s5: 2.48832;
+  --s6: 2.985984;
+  --rl: var(--r) 0 0 var(--r);
+  --rr: 0 var(--r) var(--r) 0;
+  --rt: var(--r) var(--r) 0 0;
+  --rb: 0 0 var(--r) var(--r);
+  --r: 0.25em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--heading);
+  font-family: var(--fh);
+  font-weight: bold;
+  line-height: 1.22;
+  margin: 0 0 0.6em;
+  padding: 0;
+  word-break: break-word;
+}
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + .h1,
+p + .h2,
+p + .h3,
+p + .h4,
+p + .h5 {
+  margin-top: 1.2em;
+}
+
+h1,
+.h1 {
+  font-size: calc(var(--heading-multiplier, 1) * var(--s6) * 1em);
+  min-height: 1rem;
+}
+
+h2,
+.h2,
+h1.small,
+.h1.small {
+  font-size: calc(var(--heading-multiplier, 1) * var(--s4) * 1em);
+}
+
+h3,
+.h3,
+h2.small,
+.h2.small {
+  font-size: calc(var(--heading-multiplier, 1) * var(--s3) * 1em);
+}
+
+h4,
+.h4,
+h3.small,
+.h3.small {
+  font-size: calc(var(--heading-multiplier, 1) * var(--s2) * 1em);
+}
+
+h5,
+.h5,
+h4.small,
+.h4.small {
+  font-size: calc(var(--heading-multiplier, 1) * var(--s1) * 1em);
+}
+
+small,
+.small {
+  font-size: var(--s-1);
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+  margin-top: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child {
+  margin-bottom: 0;
+}
+
+/* --- ParagraphText --- */
+p,
+ul,
+ol {
+  color: var(--paragraph, inherit);
+  line-height: 1.35;
+}
+
+p,
+li {
+  margin: 0 0 1em;
+  orphans: 3;
+  widows: 2;
+}
+
+ul.compact,
+ol.compact {
+  margin: 0 0 1em;
+}
+ul.compact li,
+ol.compact li {
+  margin-bottom: unset;
+}
+
+ul {
+  list-style: none;
+  padding-left: unset;
+}
+ul ul,
+ul ol {
+  margin-left: 1em;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-size: 2rem;
+  font-style: italic;
+  padding-left: 0.5em;
+  position: relative;
+}
+blockquote + *:not(figcaption) {
+  margin-top: 1.6em;
+}
+blockquote + figcaption {
+  font-size: 1.2em;
+  margin-top: 1em;
+  padding-right: 4em;
+}
+blockquote + figcaption::before {
+  content: "—";
+  margin-right: 1em;
+}
+blockquote::before {
+  color: var(--z, orange);
+  content: "“";
+  font-size: 10em;
+  font-style: normal;
+  left: -2.5rem;
+  opacity: 0.45;
+  position: absolute;
+  top: -5rem;
+  z-index: -1;
+}
+
+/* --- Links --- */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--light-link);
+  text-decoration: none;
+}
+
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.yb {
+  display: block;
+}
+
+.yi {
+  display: inline;
+}
+
+/*
+.yit.yit.yit.yit.yit {
+  display: inline-table;
+} */
+.yib.yib {
+  display: inline-block;
+}
+
+.yf {
+  display: flex;
+}
+
+.yfc {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+.yif {
+  display: inline-flex;
+}
+
+.yifc {
+  display: inline-flex;
+  flex-direction:column;
+}
+*/
+.fh {
+  font-family: var(--font-heading);
+}
+
+.fp {
+  font-family: var(--font-paragraph);
+}
+
+.fi {
+  font-family: var(--font-icon);
+  font-style: unset;
+}
+
+.fm {
+  font-family: monospace;
+}
+
+@font-face {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/icons.woff2") format("woff2"), url("/icons.woff") format("woff");
+}
+/* --- 360 Rotate -- */
+[data-icon]::before {
+  margin-right: 0.35em;
+}
+
+.fi-icons {
+  --font-icon: icons;
+}
+
+[data-icon]::before,
+[data-icon-left]::before,
+[data-icon-right]::after,
+.icons,
+i.icons {
+  content: attr(data-icon);
+  font-family: "icons" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-weight: normal !important;
+  line-height: 1;
+  speak: none;
+  text-transform: none !important;
+  vertical-align: middle;
+}
+
+.s-3 {
+  font-size: 0.5787037037em;
+}
+
+.s-2 {
+  font-size: 0.6944444444em;
+}
+
+.s-1 {
+  font-size: 0.8333333333em;
+}
+
+.s0 {
+  font-size: 1em;
+}
+
+.s1 {
+  font-size: 1.2em;
+}
+
+.s2 {
+  font-size: 1.44em;
+}
+
+.s3 {
+  font-size: 1.728em;
+}
+
+.s4 {
+  font-size: 2.0736em;
+}
+
+.s5 {
+  font-size: 2.48832em;
+}
+
+.s6 {
+  font-size: 2.985984em;
+}
+
+@media screen and (max-width: 899px) {
+  .sm-s-3 {
+    font-size: 0.5787037037em;
+  }
+
+  .sm-s-2 {
+    font-size: 0.6944444444em;
+  }
+
+  .sm-s-1 {
+    font-size: 0.8333333333em;
+  }
+
+  .sm-s0 {
+    font-size: 1em;
+  }
+
+  .sm-s1 {
+    font-size: 1.2em;
+  }
+
+  .sm-s2 {
+    font-size: 1.44em;
+  }
+
+  .sm-s3 {
+    font-size: 1.728em;
+  }
+
+  .sm-s4 {
+    font-size: 2.0736em;
+  }
+
+  .sm-s5 {
+    font-size: 2.48832em;
+  }
+
+  .sm-s6 {
+    font-size: 2.985984em;
+  }
+}
+.u0 {
+  --u: 0rem;
+}
+
+.v0 {
+  --v: 0rem;
+}
+
+.u12 {
+  --u: 0.12rem;
+}
+
+.v12 {
+  --v: 0.12rem;
+}
+
+.u25 {
+  --u: 0.25rem;
+}
+
+.v25 {
+  --v: 0.25rem;
+}
+
+.u50 {
+  --u: 0.5rem;
+}
+
+.v50 {
+  --v: 0.5rem;
+}
+
+.u1 {
+  --u: 1rem;
+}
+
+.v1 {
+  --v: 1rem;
+}
+
+.u2 {
+  --u: 2rem;
+}
+
+.v2 {
+  --v: 2rem;
+}
+
+.u3 {
+  --u: 3rem;
+}
+
+.v3 {
+  --v: 3rem;
+}
+
+.u4 {
+  --u: 4rem;
+}
+
+.v4 {
+  --v: 4rem;
+}
+
+.u5 {
+  --u: 5rem;
+}
+
+.v5 {
+  --v: 5rem;
+}
+
+.u6 {
+  --u: 6rem;
+}
+
+.v6 {
+  --v: 6rem;
+}
+
+.u8 {
+  --u: 8rem;
+}
+
+.v8 {
+  --v: 8rem;
+}
+
+.u10 {
+  --u: 10rem;
+}
+
+.v10 {
+  --v: 10rem;
+}
+
+@media screen and (max-width: 899px) {
+  .sm-u0 {
+    --u: 0rem;
+  }
+
+  .sm-v0 {
+    --v: 0rem;
+  }
+
+  .sm-u12 {
+    --u: 0.12rem;
+  }
+
+  .sm-v12 {
+    --v: 0.12rem;
+  }
+
+  .sm-u25 {
+    --u: 0.25rem;
+  }
+
+  .sm-v25 {
+    --v: 0.25rem;
+  }
+
+  .sm-u50 {
+    --u: 0.5rem;
+  }
+
+  .sm-v50 {
+    --v: 0.5rem;
+  }
+
+  .sm-u1 {
+    --u: 1rem;
+  }
+
+  .sm-v1 {
+    --v: 1rem;
+  }
+
+  .sm-u2 {
+    --u: 2rem;
+  }
+
+  .sm-v2 {
+    --v: 2rem;
+  }
+
+  .sm-u3 {
+    --u: 3rem;
+  }
+
+  .sm-v3 {
+    --v: 3rem;
+  }
+
+  .sm-u4 {
+    --u: 4rem;
+  }
+
+  .sm-v4 {
+    --v: 4rem;
+  }
+
+  .sm-u5 {
+    --u: 5rem;
+  }
+
+  .sm-v5 {
+    --v: 5rem;
+  }
+
+  .sm-u6 {
+    --u: 6rem;
+  }
+
+  .sm-v6 {
+    --v: 6rem;
+  }
+
+  .sm-u8 {
+    --u: 8rem;
+  }
+
+  .sm-v8 {
+    --v: 8rem;
+  }
+
+  .sm-u10 {
+    --u: 10rem;
+  }
+
+  .sm-v10 {
+    --v: 10rem;
+  }
+}
+.mt-u {
+  margin-top: var(--u);
+}
+
+.mb-u {
+  margin-bottom: var(--u);
+}
+
+.ml-u {
+  margin-left: var(--u);
+}
+
+.mr-u {
+  margin-right: var(--u);
+}
+
+.mh-u {
+  margin-left: var(--u);
+  margin-right: var(--u);
+}
+
+.mv-u {
+  margin-top: var(--u);
+  margin-bottom: var(--u);
+}
+
+.m-u {
+  margin: var(--u);
+}
+
+.pt-u {
+  padding-top: var(--u);
+}
+
+.pb-u {
+  padding-bottom: var(--u);
+}
+
+.pl-u {
+  padding-left: var(--u);
+}
+
+.pr-u {
+  padding-right: var(--u);
+}
+
+.ph-u {
+  padding-left: var(--u);
+  padding-right: var(--u);
+}
+
+.pv-u {
+  padding-top: var(--u);
+  padding-bottom: var(--u);
+}
+
+.p-u {
+  padding: var(--u);
+}
+
+.mt-v {
+  margin-top: var(--v);
+}
+
+.mb-v {
+  margin-bottom: var(--v);
+}
+
+.ml-v {
+  margin-left: var(--v);
+}
+
+.mr-v {
+  margin-right: var(--v);
+}
+
+.mh-v {
+  margin-left: var(--v);
+  margin-right: var(--v);
+}
+
+.mv-v {
+  margin-top: var(--v);
+  margin-bottom: var(--v);
+}
+
+.m-v {
+  margin: var(--v);
+}
+
+.pt-v {
+  padding-top: var(--v);
+}
+
+.pb-v {
+  padding-bottom: var(--v);
+}
+
+.pl-v {
+  padding-left: var(--v);
+}
+
+.pr-v {
+  padding-right: var(--v);
+}
+
+.ph-v {
+  padding-left: var(--v);
+  padding-right: var(--v);
+}
+
+.pv-v {
+  padding-top: var(--v);
+  padding-bottom: var(--v);
+}
+
+.p-v {
+  padding: var(--v);
+}
+
+.nm {
+  margin: 0;
+}
+
+.np {
+  padding: 0;
+}
+
+.nt {
+  font-style: normal;
+  font-weight: normal;
+}
+
+.tl {
+  font-weight: lighter;
+}
+
+.tb {
+  font-weight: bold;
+}
+
+.ti {
+  font-style: italic;
+}
+
+.tu {
+  text-transform: uppercase;
+}
+
+.tn {
+  text-decoration: underline;
+}
+
+.tw {
+  text-transform: lowercase;
+}
+
+.tsm {
+  font-feature-settings: "smcp" 1;
+}
+
+.ts {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--x, var(--paragraph));
+  text-stroke: 2px var(--x, var(--paragraph));
+}
+
+.to {
+  font-feature-settings: "onum" 1, "kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "clig" 1;
+}
+
+.tos {
+  font-feature-settings: "onum" 1;
+}
+
+.ul {
+  text-align: left;
+}
+
+.ur {
+  text-align: right;
+}
+
+.uc {
+  text-align: center;
+}
+
+.uj {
+  text-align: justify;
+}
+
+@media screen and (max-width: 599px) {
+  .xs-ul {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .sm-ul {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1368px) {
+  .md-ul {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1369px) {
+  .lg-ul {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 599px) {
+  .xs-ur {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .sm-ur {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1368px) {
+  .md-ur {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 1369px) {
+  .lg-ur {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 599px) {
+  .xs-uc {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .sm-uc {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1368px) {
+  .md-uc {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1369px) {
+  .lg-uc {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 599px) {
+  .xs-uj {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .sm-uj {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1368px) {
+  .md-uj {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 1369px) {
+  .lg-uj {
+    text-align: justify;
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+
+/* --- Hidden --- */
+.h {
+  display: none !important;
+}
+
+@media screen and (max-width: 599px) {
+  .xs-h {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .sm-h {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 900px) and (max-width: 1368px) {
+  .md-h {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1369px) {
+  .lg-h {
+    display: none !important;
+  }
+}
+@keyframes draw-stroke {
+  0% {
+    stroke-dashoffset: var(--svg-odo, 1000);
+  }
+  100% {
+    stroke-dashoffset: var(--svg-tdo, 0);
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.t, h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+p,
+li,
+a,
+figure blockquote,
+figure figcaption {
+  transition: all 0.25s;
+}
+
+/*
+$red:#DF1F00;
+
+html {
+  color: $red;
+} */
+/* --- Main  --- */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: var(--emsize);
+}
+@media screen and (min-width: 900px) {
+  html {
+    font-size: var(--emsize-sm);
+  }
+}
+
+body {
+  background: var(--light-background);
+  color: var(--paragraph);
+  font-family: var(--font-paragraph);
+  line-height: 1.35;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.basic.basic {
+  background: transparent;
+  border: 2px solid var(--x);
+  box-shadow: unset;
+  color: var(--x, var(--black));
+}
+
+.hbasic.hbasic.hbasic:hover {
+  background: transparent;
+  border: 2px solid var(--dark-x, var(--black));
+  color: var(--dark-x, var(--black));
+}
+.hbasic.hbasic.hbasic:focus, .hbasic.hbasic.hbasic:active {
+  background: var(--x, var(--black));
+  border: 2px solid var(--x, var(--black));
+  color: var(--on-x, var(--black));
+}
+
+.simple.simple,
+.simple.simple:disabled {
+  background: transparent;
+  box-shadow: unset;
+  color: var(--x, var(--black));
+}
+
+.hsimple.hsimple.hsimple:hover {
+  background: rgba(255, 255, 255, 0);
+  color: var(--dark-x, var(--black));
+}
+.hsimple.hsimple.hsimple:focus, .hsimple.hsimple.hsimple:active {
+  background: rgba(255, 255, 255, 0);
+  color: var(--light-x, var(--black));
+}
+
+.dash.dash {
+  background: transparent;
+  color: var(--dark-subtitle);
+}
+.dash.dash::before {
+  background: var(--x, var(--primary));
+  content: " ";
+  display: inline-block;
+  height: 0.1em;
+  margin-right: 0.6em;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 1.6em;
+}
+
+.hdash.hdash:hover::before {
+  background: var(--dark-x);
+}
+.hdash.hdash:focus::before, .hdash.hdash:active::before {
+  background: var(--light--x);
+}
+
+.in3d.in3d {
+  border-bottom: 5px solid var(--dark-x);
+  border-radius: 0.2rem;
+}
+
+.hin3d.hin3d.hin3d:hover {
+  border-bottom: 5px solid var(--x);
+}
+.hin3d.hin3d.hin3d:focus, .hin3d.hin3d.hin3d:active {
+  border-bottom: 0;
+}
+
+.circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+.shadow:hover, .shadow:focus {
+  box-shadow: var(--shadow-hover, var(--shadow));
+}
+
+.cool-link {
+  display: inline-block;
+}
+.cool-link::after {
+  background: var(--link);
+  content: "";
+  display: block;
+  height: 2px;
+  transition: all 0.3s;
+  width: 0;
+}
+.cool-link:hover::after {
+  background: var(--dark-link);
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .book {
+    font-size: calc(var(--s1, 1) * 1em);
+  }
+}
+.book ul {
+  padding-left: unset;
+}
+.book ul > li {
+  list-style: square;
+}
+.book ul > li,
+.book ul ul,
+.book ul ol {
+  margin-left: 2em;
+}
+.book p,
+.book li {
+  line-height: 1.7em;
+  text-align: justify;
+}
+.book img.fit {
+  object-fit: contain;
+}
+.book p + div,
+.book div.row + div,
+.book div.row + img,
+.book img + div {
+  margin-top: 6em;
+}
+.book img + p,
+.book p + img {
+  margin-top: 3em;
+}
+
+ul.inline,
+ol.inline {
+  display: inline-flex;
+}
+ul.inline li,
+ol.inline li {
+  margin: 0;
+}
+ul.inline li + li::before,
+ol.inline li + li::before {
+  color: var(--z, var(--metadata));
+  content: var(--separator, "|");
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+img.cover {
+  object-fit: cover;
+}
+
+img.contain {
+  object-fit: contain;
+}
+
 /* black   */
 /* red     */
 /* green   */
@@ -979,19 +2786,134 @@
   fill: var(--on-y);
 }
 
-.hey {
-  background: red;
-  break-after: page;
-  font-size: 4em;
+.title {
+  grid-column: title/span 1;
 }
 
-@page {
-  margin: 0;
-  size: a4;
+.second {
+  grid-column: second/span 1;
 }
+
+.content {
+  grid-column: content/span 1;
+}
+
+.l {
+  display: grid;
+  grid-column-gap: 0.2em;
+}
+
+.l-three {
+  grid-template-columns: [title] calc((100/5) *1%) [second] calc((100 / 6) * 1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-three-alt {
+  grid-template-columns: [title] calc((100/5) *1%) [second] calc((100 / 4) * 1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-two {
+  grid-template-columns: [title] calc((100/5) *1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-education {
+  grid-template-columns: [title] calc((100/75) *(100/6) *1%) [content] auto;
+}
+.l-education > .title {
+  grid-column: title/span 2;
+}
+.l-education > .years {
+  grid-column: title/span 1;
+}
+.l-education > .content {
+  grid-column: content/span 1;
+}
+
+.indented {
+  text-indent: calc((100/75) * (100/6) * 1%);
+}
+
+code {
+  background: var(--background);
+  color: var(--dark-subtitle);
+  white-space: nowrap;
+}
+
+section {
+  margin-bottom: 1em;
+}
+
+.hoz {
+  page: horizontal;
+}
+
+.page {
+  background: beige;
+  break-after: page;
+}
+
+.label {
+  background: var(--x);
+  border-radius: 0.25em;
+  color: var(--on-x);
+  padding: 0.3em;
+}
+
+.infodot {
+  align-items: center;
+  display: inline-flex;
+}
+.infodot .circle {
+  background: var(--x);
+  border-radius: 50%;
+  display: inline-block;
+  height: 1em;
+  margin-right: 0.1em;
+  width: 1em;
+}
+.infodot .text {
+  color: var(--subtitle);
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
 @media print {
+  @page {
+    border: 1px solid grey;
+    margin: 20mm 18mm 20mm;
+    outline: 1px solid blue;
+    size: a4;
+    @bottom-left {
+      content: counter(page) "/" counter(pages);
+      font-size: calc(var(--s-1) * 1em);
+    }
+    @right-bottom {
+      background: red;
+      bottom: 100mm;
+      content: "Source code: github.com/advl/resume";
+      height: 10mm;
+      position: relative;
+      transform: rotate(90deg);
+      transform-origin: bottom left;
+      width: 100mm;
+    }
+  }
+  @page horizontal {
+    size: a4 horizontal;
+    @bottom-left {
+      content: "XXX " counter(page) " of " counter(pages);
+    }
+  }
   body {
-    background: grey;
+    background: transparent;
     /* change the margins as you want them to be. */
   }
+}
+a:not(.sl)[href]::after {
+  color: inherit;
+  content: " (" attr(href) ")";
+  font-size: 0.6em;
+  text-align: left;
 }

@@ -1,31 +1,165 @@
-//@use "@fwrlines/stylebook/src/main" as stylebook;
+@use "@fwrlines/stylebook/src/main" as stylebook;
 @use "@fwrlines/swatch/src/main" as swatch;
 
 //* { outline: solid .25rem hsla(210, 30, 30, .5); }
 
-
-.hey {
-  background: red;
-  break-after: page;
-  font-size: 4em;
-  //height: 100%;
-  //width: 100%;
-}
+$margin-boxes-font-size:calc(var(--s-1) * 1em);
+$first-column-width:calc((100/5) *1%);
 
 h2 {
+  //font-variant: small-caps;
 }
 
-@page {
-  margin: 0;
-  size: a4;
+.title {
+  grid-column: title/span 1;
+}
+
+.second {
+  grid-column: second/span 1;
+}
+
+.content {
+  grid-column: content/span 1;
+}
+
+
+.l {
+  display: grid;
+  grid-column-gap: .2em;
+}
+
+.l-three {
+  grid-template-columns: [title] $first-column-width [second] calc((100 / 6) * 1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-three-alt {
+  grid-template-columns: [title] $first-column-width [second] calc((100 / 4) * 1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-two {
+  grid-template-columns: [title] $first-column-width [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-education {
+  grid-template-columns: [title] calc((100/75) *(100/6) *1%) [content] auto;
+
+  > .title {
+    grid-column: title/span 2;
+  }
+
+  > .years {
+    grid-column: title/span 1;
+  }
+
+  > .content {
+    grid-column: content/span 1;
+  }
+}
+
+.indented {
+  text-indent: calc((100/75) * (100/6) * 1%);
+}
+
+code {
+  background: var(--background);
+  color: var(--dark-subtitle);
+  white-space: nowrap;
+}
+
+section {
+  margin-bottom: 1em;
+}
+
+
+.hoz {
+  page: horizontal;
+}
+
+.page {
+  background: beige;
+  break-after: page;
+}
+
+
+
+.label {
+  background: var(--x);
+  border-radius: .25em;
+  color: var(--on-x);
+  padding: .3em;
+}
+
+.infodot {
+  align-items: center;
+  display: inline-flex;
+
+  .circle {
+    background: var(--x);
+    border-radius: 50%;
+    display: inline-block;
+    height: 1em;
+    margin-right: .1em;
+    width: 1em;
+  }
+
+  .text {
+    color: var(--subtitle);
+    line-height: 1em;
+    text-transform: uppercase;
+  }
 }
 
 @media print {
+  @page {
+    border: 1px solid grey;
+    //background: white;
+    margin: 20mm 18mm 20mm;
+    outline: 1px solid blue;
+    size: a4;
+
+    @bottom-left {
+      content: counter(page) "/" counter(pages);
+      font-size: $margin-boxes-font-size;
+      //white-space: pre-wrap;
+    }
+
+    @right-bottom {
+      background: red;
+      bottom: 100mm;
+      content: "Source\00a0 code:\00a0github.com/advl/resume";
+      //font-size: $margin-boxes-font-size;
+      height: 10mm;
+      position: relative;
+      transform: rotate(90deg);
+      transform-origin: bottom left;
+      width: 100mm;
+      //white-space: pre-wrap;
+    }
+  }
+
+  @page horizontal {
+    size: a4 horizontal;
+
+    @bottom-left {
+      content: "XXX " counter(page) " of " counter(pages);
+    }
+  }
+
   body {
-    background: grey;
+    background: transparent;
     //height: 29.7cm;*/
     //width: 21cm;
 
     /* change the margins as you want them to be. */
   }
+}
+
+a:not(.sl)[href]::after {
+  color: inherit;
+  content: " (" attr(href) ")";
+  font-size: .6em;
+  text-align: left;
 }
