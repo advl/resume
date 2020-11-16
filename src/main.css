@@ -2786,6 +2786,12 @@ img.contain {
   fill: var(--on-y);
 }
 
+html,
+body {
+  font-family: var(--font-paragraph);
+  font-size: 14px;
+}
+
 #menu {
   background: var(--secondary);
   color: var(--on-secondary);
@@ -2968,10 +2974,4 @@ a:not(.sl)[href]::after {
   content: " (" attr(href) ")";
   font-size: 0.6em;
   text-align: left;
-}
-
-html,
-body {
-  font-family: var(--font-paragraph);
-  font-size: 14px;
 }

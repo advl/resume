@@ -7,6 +7,7 @@
     "prepublish": "npm run build",
     "build": "npm run build:html && npm run build:scss && npm run copy-assets",
     "start": "nodemon src/server.js",
+    "start:prod": "nodemon --exec 'NODE_ENV=production src/server.js'",
     "filesize": "./scripts/filesize.js",
     "compile:scss": "sass src/main.scss src/main.css -I ./node_modules -c --no-source-map && npm run filesize -- src/main.css",
     "minify:scss": "postcss src/main.css -o dist/main.css && npm run filesize -- dist/main.css",

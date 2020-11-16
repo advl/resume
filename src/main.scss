@@ -6,6 +6,12 @@
 $margin-boxes-font-size:calc(var(--s-1) * 1em);
 $first-column-width:calc((100/5) *1%);
 
+html,
+body {
+  font-family: var(--font-paragraph);
+  font-size: 14px;
+}
+
 h2 {
   //font-variant: small-caps;
 }
@@ -224,10 +230,4 @@ a:not(.sl)[href]::after {
   content: " (" attr(href) ")";
   font-size: .6em;
   text-align: left;
-}
-
-html,
-body {
-  font-family: var(--font-paragraph);
-  font-size: 14px;
 }
