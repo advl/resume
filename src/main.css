@@ -2798,6 +2798,10 @@ img.contain {
   grid-column: content/span 1;
 }
 
+.double {
+  grid-column: second/span 2;
+}
+
 .l {
   display: grid;
   grid-column-gap: 0.2em;
@@ -2805,6 +2809,12 @@ img.contain {
 
 .l-three {
   grid-template-columns: [title] calc((100/5) *1%) [second] calc((100 / 6) * 1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-three-even {
+  grid-auto-flow: dense;
+  grid-template-columns: [title] calc((100/5) *1%) [second] auto [content] auto;
   page-break-inside: avoid;
 }
 
@@ -2818,17 +2828,26 @@ img.contain {
   page-break-inside: avoid;
 }
 
-.l-education {
-  grid-template-columns: [title] calc((100/75) *(100/6) *1%) [content] auto;
+.break.break {
+  page-break-inside: auto;
 }
-.l-education > .title {
-  grid-column: title/span 2;
+
+.l-work {
+  grid-column-gap: 0;
+  grid-template-columns: [years] calc((100/75) * (100 /6) *1%) [second] auto [location] calc((100/75) * (100/6) *1%);
+  page-break-inside: avoid;
 }
-.l-education > .years {
-  grid-column: title/span 1;
+.l-work .years {
+  grid-column: years/span 1;
 }
-.l-education > .content {
-  grid-column: content/span 1;
+.l-work .content {
+  grid-column: years/span 3;
+}
+.l-work .second {
+  grid-column: second/span 1;
+}
+.l-work .location {
+  grid-column: location/span 1;
 }
 
 .indented {
@@ -2882,12 +2901,15 @@ section {
 @media print {
   @page {
     border: 1px solid grey;
-    margin: 20mm 18mm 20mm;
+    margin: 18mm 18mm 20mm;
     outline: 1px solid blue;
     size: a4;
     @bottom-left {
+      bottom: 6mm;
       content: counter(page) "/" counter(pages);
       font-size: calc(var(--s-1) * 1em);
+      font-weight: bold;
+      position: relative;
     }
     @right-bottom {
       background: red;
@@ -2898,6 +2920,19 @@ section {
       transform: rotate(90deg);
       transform-origin: bottom left;
       width: 100mm;
+    }
+    @bottom-right {
+      bottom: 6mm;
+      color: var(--subtitle);
+      content: "Updated November 2020";
+      position: relative;
+    }
+    @top-left {
+      color: var(--subtitle);
+      content: "adrian@779.mx";
+      font-weight: bold;
+      position: relative;
+      top: 6mm;
     }
   }
   @page horizontal {
@@ -2911,9 +2946,21 @@ section {
     /* change the margins as you want them to be. */
   }
 }
+a.ct::after {
+  color: inherit;
+  content: " (" attr(data-ct) ")";
+  font-size: 0.6em;
+  text-align: left;
+}
+
 a:not(.sl)[href]::after {
   color: inherit;
   content: " (" attr(href) ")";
   font-size: 0.6em;
   text-align: left;
+}
+
+html,
+body {
+  font-size: 14px;
 }

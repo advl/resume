@@ -22,6 +22,10 @@ h2 {
   grid-column: content/span 1;
 }
 
+.double {
+  grid-column: second/span 2;
+}
+
 
 .l {
   display: grid;
@@ -30,6 +34,12 @@ h2 {
 
 .l-three {
   grid-template-columns: [title] $first-column-width [second] calc((100 / 6) * 1%) [content] auto;
+  page-break-inside: avoid;
+}
+
+.l-three-even {
+  grid-auto-flow: dense;
+  grid-template-columns: [title] $first-column-width [second] auto [content] auto;
   page-break-inside: avoid;
 }
 
@@ -43,21 +53,33 @@ h2 {
   page-break-inside: avoid;
 }
 
-.l-education {
-  grid-template-columns: [title] calc((100/75) *(100/6) *1%) [content] auto;
+.break.break {
+  page-break-inside: auto;
+}
 
-  > .title {
-    grid-column: title/span 2;
+
+.l-work {
+  grid-column-gap: 0;
+  grid-template-columns: [years] calc((100/75) * (100 /6) *1%) [second] auto [location] calc((100/75) * (100/6) *1%);
+  page-break-inside: avoid;
+
+  .years {
+    grid-column: years/span 1;
   }
 
-  > .years {
-    grid-column: title/span 1;
+  .content {
+    grid-column: years/span 3;
   }
 
-  > .content {
-    grid-column: content/span 1;
+  .second {
+    grid-column: second/span 1;
+  }
+
+  .location {
+    grid-column: location/span 1;
   }
 }
+
 
 .indented {
   text-indent: calc((100/75) * (100/6) * 1%);
@@ -116,13 +138,16 @@ section {
   @page {
     border: 1px solid grey;
     //background: white;
-    margin: 20mm 18mm 20mm;
+    margin: 18mm 18mm 20mm;
     outline: 1px solid blue;
     size: a4;
 
     @bottom-left {
+      bottom: 6mm;
       content: counter(page) "/" counter(pages);
       font-size: $margin-boxes-font-size;
+      font-weight: bold;
+      position: relative;
       //white-space: pre-wrap;
     }
 
@@ -137,6 +162,21 @@ section {
       transform-origin: bottom left;
       width: 100mm;
       //white-space: pre-wrap;
+    }
+
+    @bottom-right {
+      bottom: 6mm;
+      color: var(--subtitle);
+      content: "Updated November 2020";
+      position: relative;
+    }
+
+    @top-left {
+      color: var(--subtitle);
+      content: "adrian@779.mx";
+      font-weight: bold;
+      position: relative;
+      top: 6mm;
     }
   }
 
@@ -157,9 +197,21 @@ section {
   }
 }
 
+a.ct::after {
+  color: inherit;
+  content: " (" attr(data-ct) ")";
+  font-size: .6em;
+  text-align: left;
+}
+
 a:not(.sl)[href]::after {
   color: inherit;
   content: " (" attr(href) ")";
   font-size: .6em;
   text-align: left;
+}
+
+html,
+body {
+  font-size: 14px;
 }
