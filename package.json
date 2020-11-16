@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "npm run build:html && npm run build:scss",
+    "build": "npm run build:html && npm run build:scss && npm run copy-assets",
     "start": "nodemon src/server.js",
     "filesize": "./scripts/filesize.js",
     "compile:scss": "sass src/main.scss src/main.css -I ./node_modules -c --no-source-map && npm run filesize -- src/main.css",
@@ -16,16 +16,16 @@
     "test-purgecss": "npm run compile:scss && purgecss --css src/main.css --content src/index.html",
     "version:alpha": "npm version prerelease --preid=alpha",
     "version:beta": "npm version prerelease --preid=beta",
-    "makepd:prod": "wkhtmltopdf -T 0 -B 0 -L 0 -R 0 dist/index.html dist/resume.pdf",
-    "makepdf:dev": "wkhtmltopdf -T 0 -B 0 -L 0 -R 0 src/index.html src/index.pdf",
-    "relink": "npm link @fwrlines/stylebook && npm link @fwrlines/swatch"
+    "relink": "npm link @fwrlines/stylebook && npm link @fwrlines/swatch",
+    "copy-assets": "copyfiles -u 2 src/assets/**/* dist"
   },
   "author": "Adrian V",
   "license": "MIT",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@fwrlines/swatch": "latest",
     "@fwrlines/stylebook": "latest",
+    "@fwrlines/swatch": "latest",
+    "copyfiles": "^2.4.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "filesize": "^6.1.0",

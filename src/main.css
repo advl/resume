@@ -2900,9 +2900,7 @@ section {
 
 @media print {
   @page {
-    border: 1px solid grey;
     margin: 18mm 18mm 20mm;
-    outline: 1px solid blue;
     size: a4;
     @bottom-left {
       bottom: 6mm;
@@ -2912,23 +2910,24 @@ section {
       position: relative;
     }
     @right-bottom {
-      background: red;
+      align-items: center;
       bottom: 100mm;
-      content: "Source code: github.com/advl/resume";
+      color: var(--light-metadata);
+      content: "Fork this resume: github.com/advl/resume";
       height: 10mm;
       position: relative;
+      text-align: right;
       transform: rotate(90deg);
       transform-origin: bottom left;
       width: 100mm;
     }
     @bottom-right {
       bottom: 6mm;
-      color: var(--subtitle);
+      color: var(--light-metadata);
       content: "Updated November 2020";
       position: relative;
     }
     @top-left {
-      color: var(--subtitle);
       content: "adrian@779.mx";
       font-weight: bold;
       position: relative;
