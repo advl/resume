@@ -16,7 +16,7 @@ module.exports = {
       }
     },
     '@fullhuman/postcss-purgecss':{
-      content: ['./dist/**/*.html'],
+      content: ['./src/index.html'],
     },
   }
 }
