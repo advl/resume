@@ -228,5 +228,6 @@ a:not(.sl)[href]::after {
 
 html,
 body {
+  font-family: var(--font-paragraph);
   font-size: 14px;
 }
