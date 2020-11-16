@@ -1,5 +1,19 @@
 # HTML/CSS Resume for Print
 
+## Commands
+
+Start a node server to serve the site. This uses `nodemon` to watch over changes in the `./src` folder
+```
+npm run start
+```
+
+Compile the site for production.
+```
+npm run build
+```
+
+Then just print to pdf in your favourite browser !
+
 ## I wanted to make my Resume for print using only HTML and CSS
 
 + I'm a web dev, so this makes more sense than using a word processor, an already made template or even Latex

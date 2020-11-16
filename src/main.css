@@ -2786,6 +2786,13 @@ img.contain {
   fill: var(--on-y);
 }
 
+#menu {
+  background: var(--secondary);
+  color: var(--on-secondary);
+  position: fixed;
+  top: 0;
+}
+
 .title {
   grid-column: title/span 1;
 }
@@ -2899,6 +2906,10 @@ section {
 }
 
 @media print {
+  #menu {
+    display: none;
+  }
+
   @page {
     margin: 18mm 18mm 20mm;
     size: a4;

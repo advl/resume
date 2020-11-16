@@ -10,6 +10,13 @@ h2 {
   //font-variant: small-caps;
 }
 
+#menu {
+  background: var(--secondary);
+  color: var(--on-secondary);
+  position: fixed;
+  top: 0;
+}
+
 .title {
   grid-column: title/span 1;
 }
@@ -135,7 +142,12 @@ section {
 }
 
 @media print {
+  #menu {
+    display: none;
+  }
+
   @page {
+
     //border: 1px solid grey;
     //background: white;
     margin: 18mm 18mm 20mm;
