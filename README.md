@@ -46,3 +46,7 @@ Then just print to pdf in your favourite browser !
 + To make the experience intereactive, I decided to go for pagedjs even tough this adds quite a layer of code to polyfill the browsers. 
 + [Try it out](https://resume.adrianv.net) ! Click print and look at the result :) 
 + No need to compile the pdf from the html.... Tested in chrome and firefox !
+
+## Bonus
+
+You can try an interactive version of my resume by entering `npx adrianv.sh` in your terminal.
