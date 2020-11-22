@@ -36,10 +36,10 @@ Then just print to pdf in your favourite browser !
 
 ## Libraries/resources
 
++ Choosen solution => [PagedJS](https://www.pagedjs.org) : a free browser polyfill for the standard CSS print API. Downside : creates a shitton of classes and stuffs that complexify simple code
 + [Prince](https://www.princexml.com/). Requires purchasing an (expensive) license but is likely to be the UA with the most complete API.
 + [wkhtmltopdf](https://wkhtmltopdf.org/) : free, avilable as cli, also has a [npm wrapper](https://wkhtmltopdf.org/docs.html). Downsides : doesn't use standard CSS api for page dimensions
 + [WeasyPrint](https://weasyprint.org/) : free, looks like it strives on implementing the standard CSS api for print. 
-+ [PagedJS](https://www.pagedjs.org) : a free browser polyfill for the standard CSS print API. Downside : creates a shitton of classes and stuffs that complexify simple code
 
 ## In the end ...
 
