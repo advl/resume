@@ -2900,7 +2900,7 @@ section {
   }
 
   @page {
-    margin: 17mm 17mm 16mm;
+    margin: 17mm 17mm 17mm;
     size: a4;
     @bottom-left {
       bottom: 6mm;
