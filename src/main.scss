@@ -46,7 +46,7 @@ h2 {
 }
 
 .l-three {
-  grid-template-columns: [title] $first-column-width [second] calc((100 / 6) * 1%) [content] auto;
+  grid-template-columns: [title] $first-column-width [second] calc((100 / 7) * 1%) [content] auto;
   page-break-inside: avoid;
 }
 
@@ -73,7 +73,7 @@ h2 {
 
 .l-work {
   grid-column-gap: 0;
-  grid-template-columns: [years] calc((100/75) * (100 /6) *1%) [second] auto [location] calc((100/75) * (100/6) *1%);
+  grid-template-columns: [years] calc((100/75) * (100 /7) *1%) [second] auto [location] calc((100/75) * (100/7) *1%);
   page-break-inside: avoid;
 
   .years {
@@ -89,13 +89,15 @@ h2 {
   }
 
   .location {
+    font-style: italic;
     grid-column: location/span 1;
   }
 }
 
 
+
 .indented {
-  text-indent: calc((100/75) * (100/6) * 1%);
+  text-indent: calc((100/75) * (100/7) * 1%);
 }
 
 code {
@@ -156,7 +158,7 @@ section {
 
     //border: 1px solid grey;
     //background: white;
-    margin: 18mm 18mm 20mm;
+    margin: 17mm 17mm 16mm;
     //outline: 1px solid blue;
     size: a4;
 
@@ -188,7 +190,7 @@ section {
     @bottom-right {
       bottom: 6mm;
       color: var(--light-metadata);
-      content: "Updated November 2020";
+      content: "Updated December 2020";
       position: relative;
     }
 

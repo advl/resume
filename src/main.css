@@ -2803,7 +2803,7 @@ body {
 }
 
 .l-three {
-  grid-template-columns: [title] calc((100/5) *1%) [second] calc((100 / 6) * 1%) [content] auto;
+  grid-template-columns: [title] calc((100/5) *1%) [second] calc((100 / 7) * 1%) [content] auto;
   page-break-inside: avoid;
 }
 
@@ -2829,7 +2829,7 @@ body {
 
 .l-work {
   grid-column-gap: 0;
-  grid-template-columns: [years] calc((100/75) * (100 /6) *1%) [second] auto [location] calc((100/75) * (100/6) *1%);
+  grid-template-columns: [years] calc((100/75) * (100 /7) *1%) [second] auto [location] calc((100/75) * (100/7) *1%);
   page-break-inside: avoid;
 }
 .l-work .years {
@@ -2842,11 +2842,12 @@ body {
   grid-column: second/span 1;
 }
 .l-work .location {
+  font-style: italic;
   grid-column: location/span 1;
 }
 
 .indented {
-  text-indent: calc((100/75) * (100/6) * 1%);
+  text-indent: calc((100/75) * (100/7) * 1%);
 }
 
 code {
@@ -2899,7 +2900,7 @@ section {
   }
 
   @page {
-    margin: 18mm 18mm 20mm;
+    margin: 17mm 17mm 16mm;
     size: a4;
     @bottom-left {
       bottom: 6mm;
@@ -2923,7 +2924,7 @@ section {
     @bottom-right {
       bottom: 6mm;
       color: var(--light-metadata);
-      content: "Updated November 2020";
+      content: "Updated December 2020";
       position: relative;
     }
     @top-left {
