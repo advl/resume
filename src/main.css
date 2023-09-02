@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* TODO remove dependency and remove code */
 /**
  * ===== MODULE ANIMATION =====
  *
@@ -732,8 +731,8 @@ template {
   --font-paragraph: paragraph, HK Grotesk Pro, Garamond, Baskerville, Times, Times New Roman, serif;
   --font-default: var(--font-paragraph);
   --font-icon: icons;
-  --emsize-md: 18px;
-  --emsize: 16px;
+  --emsize: 18px;
+  --emsize-sm: 16px;
   --s-3: 0.5787037037;
   --s-2: 0.6944444444;
   --s-1: 0.8333333333;
@@ -762,7 +761,7 @@ h5,
 .h4,
 .h5 {
   color: var(--heading);
-  font-family: var(--font-heading);
+  font-family: var(--fh);
   font-weight: bold;
   line-height: 1.22;
   margin: 0 0 0.6em;
@@ -1477,12 +1476,17 @@ i.icons {
   text-align: justify;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 599px) {
+  .xs-ul {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
   .sm-ul {
     text-align: left;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1368px) {
   .md-ul {
     text-align: left;
   }
@@ -1492,12 +1496,17 @@ i.icons {
     text-align: left;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 599px) {
+  .xs-ur {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
   .sm-ur {
     text-align: right;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1368px) {
   .md-ur {
     text-align: right;
   }
@@ -1507,12 +1516,17 @@ i.icons {
     text-align: right;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 599px) {
+  .xs-uc {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
   .sm-uc {
     text-align: center;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1368px) {
   .md-uc {
     text-align: center;
   }
@@ -1522,12 +1536,17 @@ i.icons {
     text-align: center;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 599px) {
+  .xs-uj {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 899px) {
   .sm-uj {
     text-align: justify;
   }
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) and (max-width: 1368px) {
   .md-uj {
     text-align: justify;
   }
@@ -1615,6 +1634,12 @@ body {
 html {
   font-size: var(--emsize);
 }
+@media screen and (min-width: 900px) {
+  html {
+    font-size: var(--emsize-sm);
+  }
+}
+
 body {
   background: var(--light-background);
   color: var(--paragraph);
@@ -1778,13 +1803,6 @@ img.cover {
 
 img.contain {
   object-fit: contain;
-}
-
-.hstretch > * {
-  flex-grow: 4;
-}
-.hstretch > * > * {
-  width: 100%;
 }
 
 /* black   */
@@ -2924,7 +2942,7 @@ section {
     @bottom-right {
       bottom: 6mm;
       color: var(--light-metadata);
-      content: "Updated December 2020";
+      content: "Updated August 2023";
       position: relative;
     }
     @top-left {
