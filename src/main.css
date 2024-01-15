@@ -2942,7 +2942,7 @@ section {
     @bottom-right {
       bottom: 6mm;
       color: var(--light-metadata);
-      content: "Updated December 2023";
+      content: "Updated January 2024";
       position: relative;
     }
     @top-left {
